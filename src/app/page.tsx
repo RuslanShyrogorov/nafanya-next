@@ -1,8 +1,14 @@
 import Image from 'next/image'
 
-import { Logo } from '@/components'
+import { getAllProducts } from '@/api/shoes/route'
+import { Button } from '@/components'
 
-export default function Home() {
+export default async function Home() {
+  // const products = await prisma.product.findMany()
+  // console.log('products', products)
+  const data = await getAllProducts()
+  console.log('data', data)
+
   return (
     <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
@@ -14,7 +20,12 @@ export default function Home() {
         {/*  height={38}*/}
         {/*  priority*/}
         {/*/>*/}
-        <Logo width="145" height="40" />
+        <Button variant="text">Text</Button>
+        <Button variant="outlined">Outlined</Button>
+        <Button variant="contained">Contained</Button>
+        <Button variant="contained" disabled>
+          Contained disabled
+        </Button>
         {/*<ol className="list-inside list-decimal text-center font-[family-name:var(--font-geist-mono)] text-sm sm:text-left">*/}
         {/*  <li className="mb-2">*/}
         {/*    Get started by editing{' '}*/}
