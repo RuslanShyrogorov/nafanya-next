@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model Product {
+  id               String   @id @default(cuid()) // assuming the id is a string for Prisma
+  name             String
+  description      String
+  extraDescription String?
+  material         String
+  picture          String[]
+  article          Int      @unique
+  price            Int
+  oldPrice         Int?
+  quantity         Int
+  type             String
+  gender           Gender[]
+  season           String
+  sizes            Size[]
+}
+
+enum Gender {
+  girl
+  boy
+}
+
+model Size {
+  id        Int     @id @default(autoincrement())
+  size      Int // represents the size number (e.g., 22)
+  stock     Int // represents the quantity for each size
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+}
