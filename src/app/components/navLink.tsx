@@ -17,9 +17,7 @@ const NavLink: React.FC<INavLinkProps> = ({ path, title }) => {
     <Link
       href={path}
       className={twMerge(
-        isActive
-          ? 'text-blue-600 underline'
-          : 'text-gray-400 hover:text-blue-600',
+        isActive ? 'text-blue-dark' : 'text-gray-dark hover:text-blue-dark',
         'uppercase'
       )}
     >
