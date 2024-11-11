@@ -1,8 +1,6 @@
 import React from 'react'
 
-import { FiMinusCircle } from 'react-icons/fi' //!delete
-
-import { Navbar, Logo, Button } from '@/components'
+import { Navbar, Logo, Contacts, BasketIcon } from '@/components'
 
 const menuList = [
   { title: 'Головна', path: '/' },
@@ -11,13 +9,11 @@ const menuList = [
 ]
 
 const Header: React.FC = () => (
-  <header className="flex items-center justify-between border-b border-solid border-red-500 px-8 py-4">
-    <Logo width="145" height="40" />
-    <Button variant="text">Button</Button>
-    <Button variant="icon">
-      <FiMinusCircle className="h-6 w-6" />
-    </Button>
+  <header className="border-b-gray-secondary flex items-center justify-between border-b border-solid bg-[#FAF7F1] px-8 py-4">
+    <Logo />
+    <Contacts />
     <Navbar menuList={menuList} />
+    <BasketIcon />
   </header>
 )
 

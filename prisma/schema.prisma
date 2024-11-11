@@ -16,14 +16,14 @@ datasource db {
 
 model Product {
   id               String   @id @default(cuid()) // assuming the id is a string for Prisma
-  name             String
+  name             String   @unique
   description      String
   extraDescription String?
   material         String
   picture          String[]
-  article          Int      @unique
+  article          Int      @default(autoincrement())
   price            Int
-  oldPrice         Int?
+  oldPrice         Int      @default(0)
   quantity         Int
   type             String
   gender           Gender[]
