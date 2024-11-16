@@ -2,7 +2,7 @@ import React from 'react'
 
 import { twMerge } from 'tailwind-merge'
 
-import { IButtonProps } from '@/types'
+import { IButtonProps } from '../../types/types'
 
 const Button: React.FC<IButtonProps> = ({
   type = 'button',

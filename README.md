@@ -1,4 +1,4 @@
-## Describe project
+# Describe project
 
 
 ## SQL - Prisma
@@ -28,3 +28,7 @@ npx prisma db seed
 ```
 npx prisma studio 
 ```   
+
+## Icons library:
+React Icons - https://react-icons.github.io/react-icons/
+

@@ -1,18 +1,21 @@
 'use client'
 import React from 'react'
 
-import { NavLink } from '@/components'
+import { twMerge } from 'tailwind-merge'
+
+import { NavLink } from './ui'
 
 interface INavbarProps {
   menuList: {
     title: string
     path: string
   }[]
+  className?: string
 }
 
-const Navbar: React.FC<INavbarProps> = ({ menuList }) => {
+const Navbar: React.FC<INavbarProps> = ({ menuList, className }) => {
   return (
-    <nav>
+    <nav className={twMerge(className)}>
       <ul className="flex flex-wrap items-center justify-center gap-4">
         {menuList.map((item, index) => (
           <li key={index}>
