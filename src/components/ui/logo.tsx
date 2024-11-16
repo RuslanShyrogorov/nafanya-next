@@ -13,10 +13,10 @@ interface ILogoProps {
 }
 
 const Logo: React.FC<ILogoProps> = ({ className }) => (
-  <Link href="/" className={twMerge(className)}>
+  <Link href="/public" className={twMerge(className)}>
     <Image
       src={logo}
-      className="h-[40px] w-[145px] sm:h-[45px] sm:w-[170px] lg:h-[55px] lg:w-[195px]"
+      className="h-[35px] w-[130px] sm:h-[45px] sm:w-[170px] lg:h-[55px] lg:w-[195px]"
       alt="Nafanya logo"
       priority
     />

@@ -8,9 +8,10 @@ import { twMerge } from 'tailwind-merge'
 interface INavLinkProps {
   path: string
   title: string
+  className?: string
 }
 
-const NavLink: React.FC<INavLinkProps> = ({ path, title }) => {
+const NavLink: React.FC<INavLinkProps> = ({ path, title, className }) => {
   const pathname = usePathname()
   const isActive = pathname === path
   return (
@@ -18,7 +19,8 @@ const NavLink: React.FC<INavLinkProps> = ({ path, title }) => {
       href={path}
       className={twMerge(
         isActive ? 'text-blue-dark' : 'text-gray-dark hover:text-blue-dark',
-        'uppercase'
+        'uppercase',
+        className
       )}
     >
       {title}

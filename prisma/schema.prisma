@@ -21,7 +21,7 @@ model Product {
   extraDescription String?
   material         String
   picture          String[]
-  article          Int      @default(autoincrement())
+  article          Int      @unique @default(autoincrement())
   price            Int
   oldPrice         Int      @default(0)
   quantity         Int
