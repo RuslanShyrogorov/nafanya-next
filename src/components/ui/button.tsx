@@ -13,7 +13,8 @@ const Button: React.FC<IButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const baseBtnStyle = 'outline-transparent cursor-pointer'
+  const baseBtnStyle =
+    'outline-transparent cursor-pointer animate-fade animate-duration-1000 animate-delay-[250ms] animate-ease-in'
 
   const variantBtnStyles = {
     icon: 'text-inherit, bg-inherit, border-none, p-0, flex, items-center, justify-center, rounded-full, transition-transform, duration-200, hover:scale-110',
