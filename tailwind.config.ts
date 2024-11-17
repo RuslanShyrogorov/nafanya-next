@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import animatedPlugin from 'tailwindcss-animated'
 
 const config: Config = {
   content: [
@@ -9,36 +10,37 @@ const config: Config = {
   theme: {
     extend: {
       fill: {
-        gray: '#3E3E3E',
+        gray: {
+          default: 'var(--gray-light)',
+          dark: 'var(--gray-dark)',
+        },
       },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        main: '#FAF7F1',
-        'gray-light': '#3E3E3E',
-        'gray-dark': '#747474',
+        main: 'var(--bg-accent)',
         red: {
-          100: '#FF3451',
-          200: '#e31235',
-          hover: '#fadbda',
-          'hover-light': '#fbe4e3',
+          light: 'var(--red-light)',
+          dark: 'var(--red-dark)',
+          hover: 'var(--red-hover)',
+          // 'hover-light': '#fbe4e3',
         },
         brown: {
-          light: '#D7B399',
-          dark: '#9d825d',
+          light: 'var(--brown-light)',
+          dark: 'var(--brown-dark)',
         },
         blue: {
-          light: '#40A3F8',
-          dark: '#1D76F5',
+          light: 'var(--blue-light)',
+          dark: 'var(--blue-dark)',
         },
         gray: {
-          default: '#3E3E3E',
-          secondary: '#DDDDDD',
-          dark: '#747474',
+          default: 'var(--gray)',
+          light: 'var(--gray-light)',
+          dark: 'var(--gray-dark)',
         },
       },
     },
   },
-  plugins: [],
+  plugins: [animatedPlugin],
 }
 export default config

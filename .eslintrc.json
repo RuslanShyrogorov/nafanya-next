@@ -7,17 +7,17 @@
     "plugin:react/recommended",
     "plugin:import/recommended",
     "plugin:react/jsx-runtime", // disable all rules conflict with React 17 JSX transform
-    "plugin:tailwindcss/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:tailwindcss/recommended"
   ],
   "plugins": [
     "import",
-    "tailwindcss",
-    "prettier"
+    "prettier",
+    "tailwindcss"
   ],
   "ignorePatterns": ["dist"],
   "rules": {
-    "tailwindcss/classnames-order": "warn",
+    "tailwindcss/classnames-order": "off",
     "prettier/prettier": "warn",
     "react/prop-types": "off",
     "import/order": [

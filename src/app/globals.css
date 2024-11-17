@@ -5,6 +5,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bg-accent: #FAF7F1;
+  --gray:#DDDDDD;
+  --gray-light:#747474;
+  --gray-dark:#3E3E3E;
+  --red-light:#FF3451;
+  --red-dark:#e31235;
+  --red-hover:#fadbda;
+  --brown-light:#D7B399;
+  --brown-dark:#9d825d;
+  --blue-light:#40A3F8;
+  --blue-dark:#1D76F5;
 }
 
 @media (prefers-color-scheme: dark) {
