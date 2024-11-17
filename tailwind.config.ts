@@ -39,6 +39,9 @@ const config: Config = {
           dark: 'var(--gray-dark)',
         },
       },
+      backgroundImage: {
+        hero: "url('./assets/images/hero.webp')",
+      },
     },
   },
   plugins: [animatedPlugin],

@@ -1,39 +1,13 @@
-import { getAllProducts } from '@/api/shoes/route'
-
-import { Button } from '../components/ui'
-
-async function fetchProducts() {
-  try {
-    return await getAllProducts()
-  } catch (error) {
-    console.error('Error fetching products', error)
-    return []
-  }
-}
-
-const Home = async () => {
-  const products = await fetchProducts()
-
+const Home = () => {
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-2 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-2">
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <p>Products:</p>
-        {products?.map((product) => (
-          <div key={product.id}>
-            <p>{product.name}</p>
-          </div>
-        ))}
-
-        {/*================================*/}
-        <Button variant="text">Text</Button>
-        <Button variant="outlined">Outlined</Button>
-        <Button variant="contained">Contained</Button>
-        <Button variant="contained" disabled>
-          Contained disabled
-        </Button>
-      </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6"></footer>
-    </div>
+    <section className="bg-hero size-full bg-cover bg-center bg-no-repeat">
+      <div className="flex size-full items-center justify-center bg-[linear-gradient(rgba(47,48,58,0.4),rgba(47,48,58,0.4))]">
+        <h1 className="text-3xl font-bold text-white md:text-6xl lg:text-7xl">
+          Ортопедичне взуття
+          <br /> для дітей та підлітків!
+        </h1>
+      </div>
+    </section>
   )
 }
 
