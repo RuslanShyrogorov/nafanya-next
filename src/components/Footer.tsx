@@ -88,7 +88,7 @@ const Footer: React.FC<Props> = () => (
             <li>
               <Link
                 className="hover:shadow-xl hover:transition hover:duration-300"
-                href="https://www.instagram.com/magazin_nafanya?igsh=cGdnZmR1NG0ybHdl"
+                href="https://www.instagram.com/nafanya.shoes?igsh=cGdnZmR1NG0ybHdl"
                 rel="noreferrer noopener"
                 target="_blank"
               >

@@ -32,7 +32,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} grid min-h-dvh grid-rows-[auto_1fr_auto] antialiased`}
       >
         <Header />
-        <main>{children}</main>
+        <main className="container mx-auto px-1 sm:px-2 lg:px-4">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -42,6 +42,9 @@ const config: Config = {
       backgroundImage: {
         hero: "url('./assets/images/hero.webp')",
       },
+      gridTemplateColumns: {
+        'auto-fit-minmax': 'repeat(auto-fit, minmax(270px, 320px))',
+      },
     },
   },
   plugins: [animatedPlugin],
