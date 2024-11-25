@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
 
 import { getAllProducts } from '@/api/shoes/route'
@@ -29,10 +30,15 @@ const ShoesPage: React.FC<Props> = async ({ className }) => {
 
       <FilterButtons />
 
-      <ul className="grid-cols-auto-fit-minmax grid justify-center gap-x-4 gap-y-6">
+      <ul className="grid grid-cols-auto-fit-minmax place-items-start justify-center gap-4">
         {products?.map((product) => (
-          <li key={product.id}>
-            <ItemCard product={product} />
+          <li key={product.id} className="grid grid-rows-subgrid">
+            <Link
+              href={'/product/' + product.id}
+              className="row-span-1 grid grid-rows-subgrid gap-4"
+            >
+              <ItemCard product={product} />
+            </Link>
           </li>
         ))}
       </ul>
