@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 
 import prisma from '../../../lib/prisma'
 
-export async function GET() {
+const getAllProducts = async () => {
   try {
     const shoes = await prisma.product.findMany({
       take: 6,
@@ -25,3 +25,4 @@ export async function GET() {
     await prisma.$disconnect()
   }
 }
+export { getAllProducts as GET }
