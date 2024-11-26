@@ -3,8 +3,6 @@ import React from 'react'
 import Link from 'next/link'
 import { twMerge } from 'tailwind-merge'
 
-// import { getAllProducts } from '@/api/shoes/route'
-
 import { ItemCard } from '../../components'
 import FilterButtons from '../../components/filterButtons'
 import { IShoe } from '../../types/types'
@@ -12,19 +10,10 @@ import { IShoe } from '../../types/types'
 interface Props {
   className?: string
 }
-// async function fetchProducts() {
-//   try {
-//     return await getAllProducts()
-//   } catch (error) {
-//     console.error('Error fetching products', error)
-//     return []
-//   }
-// }
 
 const ShoesPage: React.FC<Props> = async ({ className }) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/shoes`)
   const data = await res.json()
-  console.log('data', data.shoes)
   const products = data.shoes
 
   return (
@@ -46,9 +35,7 @@ const ShoesPage: React.FC<Props> = async ({ className }) => {
                 product={product}
                 className={twMerge(
                   index % 2 === 0
-                    ? // 'animate-duration-2000 animate-flip-down animate-delay-150 animate-ease-in-out'
-                      // : 'animate-duration-2000 animate-flip-up animate-delay-150 animate-ease-in-out'
-                      'animate-duration-2000 animate-fade-up animate-delay-150 animate-ease-in-out'
+                    ? 'animate-duration-2000 animate-fade-up animate-delay-150 animate-ease-in-out'
                     : 'animate-duration-2000 animate-fade-down animate-delay-150 animate-ease-in-out'
                 )}
               />
