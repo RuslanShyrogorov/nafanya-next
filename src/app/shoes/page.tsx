@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 
 import Link from 'next/link'
@@ -11,10 +12,16 @@ interface Props {
   className?: string
 }
 
-const ShoesPage: React.FC<Props> = async ({ className }) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/shoes`)
-  const data = await res.json()
-  const products = data.shoes
+const ShoesPage: React.FC<Props> = ({ className }) => {
+  const [products, setProducts] = React.useState<IShoe[]>([])
+  React.useEffect(() => {
+    const fetchProducts = async () => {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/shoes`)
+      const data = await res.json()
+      setProducts(data.shoes)
+    }
+    fetchProducts()
+  }, [])
 
   return (
     <div className={twMerge('py-10', className)}>
