@@ -8,11 +8,7 @@ import { ItemCard } from '../../components'
 import FilterButtons from '../../components/filterButtons'
 import { IShoe } from '../../types/types'
 
-interface Props {
-  className?: string
-}
-
-const ShoesPage: React.FC<Props> = ({ className }) => {
+const ShoesPage = () => {
   const [products, setProducts] = React.useState<IShoe[]>([])
   React.useEffect(() => {
     const fetchProducts = async () => {
@@ -24,7 +20,7 @@ const ShoesPage: React.FC<Props> = ({ className }) => {
   }, [])
 
   return (
-    <div className={twMerge('py-10', className)}>
+    <div className={twMerge('py-10')}>
       <h1 className="mb-4 animate-fade-down text-center text-4xl font-bold leading-snug animate-delay-150 animate-duration-1000 animate-ease-in-out">
         Ортопедичне взуття
       </h1>
