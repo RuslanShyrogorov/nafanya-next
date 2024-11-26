@@ -24,8 +24,8 @@ export async function getAllProducts() {
 
 export async function GET() {
   try {
-    const products = await prisma.product.findMany({
-      // take: 5,
+    const shoes = await prisma.product.findMany({
+      take: 6,
       orderBy: {
         id: 'desc',
       },
@@ -33,7 +33,7 @@ export async function GET() {
         sizes: true,
       },
     })
-    return NextResponse.json({ success: true, products })
+    return NextResponse.json({ success: true, shoes })
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error)
     return NextResponse.json(
