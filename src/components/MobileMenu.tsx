@@ -23,7 +23,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({
   <div
     className={twMerge(
       isOpen ? 'opacity-100' : 'opacity-0',
-      'absolute left-0 top-14 flex min-h-screen w-full flex-col items-center gap-6 bg-main py-8 text-lg transition-all duration-300 ease-in-out xl:hidden'
+      'absolute left-0 top-14 z-50 flex min-h-screen w-full flex-col items-center gap-6 bg-main py-8 text-lg transition-all duration-300 ease-in-out xl:hidden'
     )}
   >
     <nav className={className}>

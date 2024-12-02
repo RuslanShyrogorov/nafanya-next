@@ -3,24 +3,24 @@ import { NextResponse } from 'next/server'
 
 import prisma from '../../../lib/prisma'
 
-export async function getAllProducts() {
-  try {
-    return await prisma.product.findMany({
-      // take: 5,
-      orderBy: {
-        id: 'asc',
-      },
-      include: {
-        sizes: true,
-      },
-    })
-  } catch (error) {
-    console.error('Database query failed', error)
-    return null
-  } finally {
-    await prisma.$disconnect()
-  }
-}
+// export async function getAllProducts() {
+//   try {
+//     return await prisma.product.findMany({
+//       // take: 5,
+//       orderBy: {
+//         id: 'asc',
+//       },
+//       include: {
+//         sizes: true,
+//       },
+//     })
+//   } catch (error) {
+//     console.error('Database query failed', error)
+//     return null
+//   } finally {
+//     await prisma.$disconnect()
+//   }
+// }
 
 export async function GET() {
   try {

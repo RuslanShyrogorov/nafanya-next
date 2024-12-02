@@ -10,7 +10,7 @@ import { Logo, BasketIcon, Button } from './ui'
 
 const menuList = [
   { title: 'Головна', path: '/' },
-  { title: 'Взуття', path: '/shoes' },
+  { title: 'Взуття', path: '/products' },
   { title: 'Оплата та доставка', path: '/payment' },
 ]
 
@@ -24,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
   return (
     <header
       className={twMerge(
-        'relative flex items-center justify-between border-b border-solid border-b-gray-secondary bg-main py-2 pl-3 pr-0 md:px-8 md:py-2',
+        'border-b-gray-secondary relative flex items-center justify-between border-b border-solid bg-main py-2 pl-3 pr-0 md:px-8 md:py-2',
         className
       )}
     >

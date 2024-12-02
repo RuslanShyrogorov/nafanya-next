@@ -5,12 +5,12 @@ import { twMerge } from 'tailwind-merge'
 
 // import { getAllProducts } from '@/api/shoes/route'
 
-import { ItemCard } from '../../components'
-import FilterButtons from '../../components/filterButtons'
+import { ItemCard, FilterButtons } from '../../components'
 import { IShoe } from '../../types/types'
 
 interface Props {
   className?: string
+  product: IShoe
 }
 // async function fetchProducts() {
 //   try {
@@ -22,9 +22,8 @@ interface Props {
 // }
 
 const ShoesPage: React.FC<Props> = async ({ className }) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/shoes`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`)
   const data = await res.json()
-  console.log('data', data.shoes)
   const products = data.shoes
 
   return (
@@ -38,21 +37,14 @@ const ShoesPage: React.FC<Props> = async ({ className }) => {
       <ul className="grid grid-cols-auto-fit-minmax place-items-start justify-center gap-4">
         {products?.map((product: IShoe, index: number) => (
           <li key={product.id} className="grid grid-rows-subgrid">
-            <Link
-              href={'/product/' + product.id}
-              className="row-span-1 grid grid-rows-subgrid gap-4"
-            >
-              <ItemCard
-                product={product}
-                className={twMerge(
-                  index % 2 === 0
-                    ? // 'animate-duration-2000 animate-flip-down animate-delay-150 animate-ease-in-out'
-                      // : 'animate-duration-2000 animate-flip-up animate-delay-150 animate-ease-in-out'
-                      'animate-duration-2000 animate-fade-up animate-delay-150 animate-ease-in-out'
-                    : 'animate-duration-2000 animate-fade-down animate-delay-150 animate-ease-in-out'
-                )}
-              />
-            </Link>
+            <ItemCard
+              product={product}
+              className={twMerge(
+                index % 2 === 0
+                  ? 'animate-duration-2000 animate-fade-up animate-delay-150 animate-ease-in-out'
+                  : 'animate-duration-2000 animate-fade-down animate-delay-150 animate-ease-in-out'
+              )}
+            />
           </li>
         ))}
       </ul>

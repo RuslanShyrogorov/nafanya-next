@@ -1,4 +1,4 @@
-import {
+import React, {
   ButtonHTMLAttributes,
   DetailedHTMLProps,
   MouseEvent,
@@ -18,7 +18,7 @@ export interface IButtonProps
   disabled?: boolean
   onClick?: (e: MouseEvent) => void
   className?: string
-  children: ReactElement | React.ReactNode
+  children?: ReactElement | React.ReactNode
 }
 
 export interface IShoe {

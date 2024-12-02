@@ -45,6 +45,19 @@ const config: Config = {
       gridTemplateColumns: {
         'auto-fit-minmax': 'repeat(auto-fit, minmax(270px, 320px))',
       },
+      dropShadow: {
+        '2xl': '0 2px 7px rgba(0, 0, 0, .23)',
+        '3xl': [
+          '0px 1px 1px rgba(0, 0, 0, 0.12)',
+          '0px 4px 4px rgba(0, 0, 0, 0.06)',
+          '1px 4px 6px rgba(0, 0, 0, 0.16)',
+        ],
+        '4xl': [
+          '0px 3px 1px rgba(0, 0, 0, 0.1)',
+          '0px 1px 2px rgba(0, 0, 0, 0.08)',
+          '0px 2px 2px rgba(0, 0, 0, 0.12)',
+        ],
+      },
     },
   },
   plugins: [animatedPlugin],
