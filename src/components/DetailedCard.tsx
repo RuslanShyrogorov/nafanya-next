@@ -5,14 +5,18 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { FiArrowLeft, FiMinusCircle, FiPlusCircle } from 'react-icons/fi'
 
+import { RadioButtons } from './index'
 import { Button, OldPrice } from './ui'
 import { IShoe } from '../types/types'
+
+// TODO fix img
+// TODO fix padding
 
 const DetailedCard = ({ product }: { product: IShoe }) => {
   const [quantity, setQuantity] = useState(1)
   const [selectedSize, setSelectedSize] = useState('')
   const router = useRouter()
-  console.log('product', product)
+  const sizesForBtn = product.sizes.map((item) => item.size.toString())
 
   return (
     <div className="container mx-auto px-4 py-5 font-medium md:py-7 md:text-lg">
@@ -63,17 +67,16 @@ const DetailedCard = ({ product }: { product: IShoe }) => {
             </p>
             <div>
               <span className="mr-2.5 font-semibold">Розмір:</span>
-              radio buttons
-              {/*<RadioButtons*/}
-              {/*  sizes={sizesBtn}*/}
-              {/*  selected={selectedSize}*/}
-              {/*  setSelected={setSelectedSize}*/}
-              {/*/>*/}
+              <RadioButtons
+                sizes={sizesForBtn}
+                selected={selectedSize}
+                setSelected={setSelectedSize}
+              />
             </div>
             <p className="">
               <span className="mr-2.5 font-semibold">Ціна: </span>
               {product.price.toLocaleString('ru')} грн.
-              <OldPrice oldPrice={1356} className="" />
+              <OldPrice oldPrice={product.oldPrice} className="" />
             </p>
             <div className="flex items-center gap-x-2.5">
               <span className="mr-2.5 font-semibold">Кількість:</span>

@@ -6,7 +6,7 @@ interface IRadioButtonsProps {
   setSelected: (value: string) => void
   className?: string
 }
-
+// TODO radio buttons check styles
 const RadioButtons = ({
   sizes,
   selected,
@@ -15,12 +15,12 @@ const RadioButtons = ({
 }: IRadioButtonsProps) => {
   return (
     <div>
-      <ul>
+      <ul className="inline-flex flex-wrap gap-x-2.5 gap-y-1">
         {sizes.map((size) => (
-          <li key={size} className={twMerge('mt-5', className)}>
+          <li key={size} className={twMerge('', className)}>
             <label className="flex cursor-pointer items-center gap-1">
               <input
-                className="m-0 accent-red-50"
+                className="m-0 checked:accent-red-50"
                 type="radio"
                 name="size"
                 value={size}
