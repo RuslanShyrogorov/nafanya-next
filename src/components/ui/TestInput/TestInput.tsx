@@ -5,7 +5,6 @@ export function TestInput({}: TestInputProps) {
   return (
     <div className={s.TestInput}>
       <div>TestInput</div>
-      <p>Some text</p>
     </div>
   )
 }
